@@ -46,8 +46,8 @@ class automatic:
             "https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/authorize?response_type=code&client_id=019220f4-2ec0-41c2-a727-529f1b54bb06&redirect_uri=https%3A%2F%2Fswayam.gov.in%2Fwso_ok&scope=https%3A%2F%2Fswayamopenid.onmicrosoft.com%2Fapi%2Fuser_impersonation+offline_access+openid&state=SUjzaPJ6u7TUaGIhrT39qIt4elQnUg&access_type=authorization_code")
         # print(drive.title)
         # print(drive.page_source)
-        username = "hari_hara_sankar"
-        password = "learner123$"
+        username = 
+        password = 
         drive.find_element(By.ID, "logonIdentifier").send_keys(username)
         drive.find_element(By.ID, "password").send_keys(password)
         element = WebDriverWait(drive, 10).until(
