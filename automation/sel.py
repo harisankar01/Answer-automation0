@@ -21,7 +21,7 @@ class automatic:
     def scrape(self):
         li = list()
         page = requests.get(
-            "https://quizermania.com/introduction-to-internet-of-things-nptel-week-0-assignment-solutions/").text
+            "").text #scrape website
         soup = BeautifulSoup(page, 'lxml')
         buttons = soup.find_all('button', class_="acc active")
         ans = soup.find_all('div', class_="pnl")
@@ -43,11 +43,11 @@ class automatic:
         drive.delete_all_cookies()
         drive.implicitly_wait(10)
         drive.get(
-            "https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/authorize?response_type=code&client_id=019220f4-2ec0-41c2-a727-529f1b54bb06&redirect_uri=https%3A%2F%2Fswayam.gov.in%2Fwso_ok&scope=https%3A%2F%2Fswayamopenid.onmicrosoft.com%2Fapi%2Fuser_impersonation+offline_access+openid&state=SUjzaPJ6u7TUaGIhrT39qIt4elQnUg&access_type=authorization_code")
+        )  # website to which answering is performed
         # print(drive.title)
         # print(drive.page_source)
-        username = 
-        password = 
+        username = #eneter your username
+        password = #eneter your password
         drive.find_element(By.ID, "logonIdentifier").send_keys(username)
         drive.find_element(By.ID, "password").send_keys(password)
         element = WebDriverWait(drive, 10).until(
@@ -72,6 +72,7 @@ class automatic:
         ele.click()
         time.sleep(5)  # 8tRhYVO8PffT.1.5912200043560960.0
         # question 1
+        # instead of 10 for loop we can add all random option values to a list and iterate over it --|--
         for i in range(0, 4) :
             txt = drive.find_element(By.XPATH, "//label[@for='8tRhYVO8PffT.0.5229585321951232.{}']".format(i)).text
             xe = re.split("\s", txt, 1)
